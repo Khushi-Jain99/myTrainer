@@ -116,14 +116,15 @@ export default function CameraFeed({ workoutStarted, user, exercise, onMetricsUp
   return (
     <div className="glass-card" style={{ padding: '20px', minHeight: '440px', display: 'flex', flexDirection: 'column' }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '14px' }}>
-        <h3 style={{ fontSize: '1.1rem', fontWeight: 700, display: 'flex', alignItems: 'center', gap: '8px' }}>
-          <Video size={20} color="var(--accent-cyan)" /> Live AI Motion Feed
+        <h3 style={{ fontSize: '1.1rem', fontWeight: 700, display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--text-main)' }}>
+          <Video size={20} color="var(--accent-purple)" /> Live AI Motion Feed
         </h3>
         {workoutStarted && (
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
             <span style={{
-              background: streamActive ? 'rgba(0, 230, 118, 0.15)' : 'rgba(255, 23, 68, 0.15)',
+              background: streamActive ? '#ecfdf5' : '#fef2f2',
               color: streamActive ? 'var(--accent-green)' : 'var(--accent-red)',
+              border: streamActive ? '1px solid #a7f3d0' : '1px solid #fecaca',
               padding: '4px 10px',
               borderRadius: '20px',
               fontSize: '0.75rem',
@@ -149,12 +150,13 @@ export default function CameraFeed({ workoutStarted, user, exercise, onMetricsUp
         width: '100%',
         flex: 1,
         minHeight: '360px',
-        background: '#000',
+        background: workoutStarted ? '#0f172a' : '#f8fafc',
         borderRadius: '12px',
         overflow: 'hidden',
         display: 'flex',
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'center',
+        border: '1px solid var(--border-color)'
       }}>
         {/* Hidden video & canvas for frame grabbing */}
         <video ref={videoRef} style={{ display: 'none' }} playsInline muted />
@@ -168,7 +170,7 @@ export default function CameraFeed({ workoutStarted, user, exercise, onMetricsUp
               style={{ width: '100%', height: '100%', objectFit: 'contain' }}
             />
           ) : (
-            <div style={{ color: 'var(--text-muted)', textAlign: 'center' }}>
+            <div style={{ color: '#94a3b8', textAlign: 'center' }}>
               <div className="audio-wave-bar" />
               <div className="audio-wave-bar" />
               <div className="audio-wave-bar" />
@@ -177,18 +179,19 @@ export default function CameraFeed({ workoutStarted, user, exercise, onMetricsUp
           )
         ) : (
           <div style={{
-            border: '2px dashed rgba(255, 255, 255, 0.15)',
+            border: '2px dashed #cbd5e1',
+            background: '#ffffff',
             borderRadius: '12px',
             width: '90%',
             padding: '48px 24px',
             textAlign: 'center',
             color: 'var(--text-muted)'
           }}>
-            <Sliders size={48} color="var(--accent-cyan)" style={{ opacity: 0.6, marginBottom: '16px' }} />
-            <h3 style={{ color: '#fff', fontSize: '1.2rem', marginBottom: '8px' }}>
+            <Sliders size={48} color="var(--accent-purple)" style={{ opacity: 0.8, marginBottom: '16px' }} />
+            <h3 style={{ color: 'var(--text-main)', fontSize: '1.2rem', marginBottom: '8px', fontWeight: 700 }}>
               👈 Set your workout plan
             </h3>
-            <p style={{ fontSize: '0.95rem', maxWidth: '420px', margin: '0 auto', lineHeight: '1.5' }}>
+            <p style={{ fontSize: '0.95rem', maxWidth: '420px', margin: '0 auto', lineHeight: '1.5', color: 'var(--text-muted)' }}>
               Choose your exercise, target sets, and reps in the sidebar panel,<br />
               then click <strong>Start Workout</strong> to activate camera tracking and your AI coach.
             </p>
@@ -198,3 +201,4 @@ export default function CameraFeed({ workoutStarted, user, exercise, onMetricsUp
     </div>
   );
 }
+

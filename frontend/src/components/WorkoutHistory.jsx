@@ -28,22 +28,34 @@ export default function WorkoutHistory({ user, refreshTrigger }) {
   return (
     <div className="glass-card" style={{ padding: '24px', marginTop: '24px' }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '18px' }}>
-        <h3 style={{ fontSize: '1.1rem', fontWeight: 700, display: 'flex', alignItems: 'center', gap: '8px' }}>
-          <History size={20} color="var(--accent-cyan)" /> Workout History
+        <h3 style={{ fontSize: '1.1rem', fontWeight: 700, display: 'flex', alignItems: 'center', gap: '8px', color: 'var(--text-main)' }}>
+          <History size={20} color="var(--accent-purple)" /> Workout History
         </h3>
         <button
           onClick={fetchHistory}
           style={{
-            background: 'transparent',
+            background: '#ffffff',
             border: '1px solid var(--border-color)',
             color: 'var(--text-muted)',
             padding: '6px 12px',
             borderRadius: '8px',
             cursor: 'pointer',
             fontSize: '0.8rem',
+            fontWeight: 500,
             display: 'flex',
             alignItems: 'center',
-            gap: '6px'
+            gap: '6px',
+            transition: 'all 0.2s ease'
+          }}
+          onMouseOver={(e) => {
+            e.currentTarget.style.borderColor = 'var(--accent-purple)';
+            e.currentTarget.style.color = 'var(--accent-purple)';
+            e.currentTarget.style.background = '#f4f6fc';
+          }}
+          onMouseOut={(e) => {
+            e.currentTarget.style.borderColor = 'var(--border-color)';
+            e.currentTarget.style.color = 'var(--text-muted)';
+            e.currentTarget.style.background = '#ffffff';
           }}
         >
           <RefreshCw size={12} className={loading ? 'pulse-accent' : ''} /> Refresh
@@ -68,18 +80,18 @@ export default function WorkoutHistory({ user, refreshTrigger }) {
                 <tr
                   key={idx}
                   style={{
-                    borderBottom: '1px solid rgba(255, 255, 255, 0.05)',
+                    borderBottom: '1px solid #f1f5f9',
                     transition: 'background 0.2s'
                   }}
-                  onMouseOver={(e) => e.currentTarget.style.background = 'rgba(255, 255, 255, 0.02)'}
+                  onMouseOver={(e) => e.currentTarget.style.background = '#f8fafc'}
                   onMouseOut={(e) => e.currentTarget.style.background = 'transparent'}
                 >
                   <td style={{ padding: '12px 14px', color: 'var(--text-muted)', fontFamily: 'var(--font-mono)' }}>{idx + 1}</td>
-                  <td style={{ padding: '12px 14px', fontWeight: 600, color: 'var(--accent-cyan)' }}>{row.Exercise}</td>
+                  <td style={{ padding: '12px 14px', fontWeight: 600, color: 'var(--accent-purple)' }}>{row.Exercise}</td>
                   <td style={{ padding: '12px 14px', color: 'var(--text-muted)' }}>{row.Date}</td>
-                  <td style={{ padding: '12px 14px', fontWeight: 600 }}>{row.Sets}</td>
-                  <td style={{ padding: '12px 14px', fontWeight: 700, color: 'var(--accent-green)' }}>{row.Reps}</td>
-                  <td style={{ padding: '12px 14px', fontFamily: 'var(--font-mono)' }}>{row['Time (sec)']}</td>
+                  <td style={{ padding: '12px 14px', fontWeight: 600, color: 'var(--text-main)' }}>{row.Sets}</td>
+                  <td style={{ padding: '12px 14px', fontWeight: 700, color: '#047857' }}>{row.Reps}</td>
+                  <td style={{ padding: '12px 14px', fontFamily: 'var(--font-mono)', color: 'var(--text-main)' }}>{row['Time (sec)']}</td>
                 </tr>
               ))}
             </tbody>
@@ -90,7 +102,8 @@ export default function WorkoutHistory({ user, refreshTrigger }) {
           padding: '32px',
           textAlign: 'center',
           color: 'var(--text-muted)',
-          background: 'rgba(0, 0, 0, 0.2)',
+          background: '#f8fafc',
+          border: '1px solid var(--border-color)',
           borderRadius: '10px'
         }}>
           <p style={{ fontSize: '0.95rem' }}>No workout history found yet. Complete a workout set to view your logs here!</p>
@@ -99,3 +112,4 @@ export default function WorkoutHistory({ user, refreshTrigger }) {
     </div>
   );
 }
+

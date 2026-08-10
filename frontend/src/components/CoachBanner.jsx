@@ -23,8 +23,8 @@ export default function CoachBanner({ coachFeedback }) {
       style={{
         padding: '16px 20px',
         marginBottom: '20px',
-        background: 'linear-gradient(135deg, rgba(0, 229, 255, 0.12), rgba(124, 77, 255, 0.12))',
-        border: '1px solid rgba(0, 229, 255, 0.3)',
+        background: 'linear-gradient(135deg, rgba(79, 70, 229, 0.08), rgba(2, 132, 199, 0.08))',
+        border: '1px solid rgba(79, 70, 229, 0.25)',
         borderRadius: '14px',
         display: 'flex',
         alignItems: 'center',
@@ -33,24 +33,25 @@ export default function CoachBanner({ coachFeedback }) {
     >
       <div
         style={{
-          background: 'var(--accent-cyan)',
+          background: 'var(--accent-purple)',
           width: '38px',
           height: '38px',
           borderRadius: '10px',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          flexShrink: 0
+          flexShrink: 0,
+          boxShadow: '0 4px 10px rgba(79, 70, 229, 0.25)'
         }}
       >
-        <Bot size={22} color="#000" />
+        <Bot size={22} color="#ffffff" />
       </div>
 
       <div style={{ flex: 1 }}>
-        <div style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--accent-cyan)', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+        <div style={{ fontSize: '0.75rem', fontWeight: 700, color: 'var(--accent-purple)', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
           🤖 My Trainer Voice Cue
         </div>
-        <div style={{ fontSize: '1rem', fontWeight: 600, color: '#fff', marginTop: '2px' }}>
+        <div style={{ fontSize: '1rem', fontWeight: 600, color: 'var(--text-main)', marginTop: '2px' }}>
           "{coachFeedback.text}"
         </div>
       </div>
@@ -59,7 +60,7 @@ export default function CoachBanner({ coachFeedback }) {
         <div className="audio-wave-bar" />
         <div className="audio-wave-bar" />
         <div className="audio-wave-bar" />
-        <Volume2 size={18} color="var(--accent-cyan)" style={{ marginLeft: '6px' }} />
+        <Volume2 size={18} color="var(--accent-purple)" style={{ marginLeft: '6px' }} />
       </div>
 
       {/* Hidden audio element for TTS playback */}
@@ -67,3 +68,4 @@ export default function CoachBanner({ coachFeedback }) {
     </div>
   );
 }
+

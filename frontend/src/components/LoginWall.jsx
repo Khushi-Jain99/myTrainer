@@ -44,7 +44,7 @@ export default function LoginWall({ onLogin }) {
         textAlign: 'center'
       }}>
         <div style={{
-          background: 'linear-gradient(135deg, var(--accent-cyan), var(--accent-purple))',
+          background: 'linear-gradient(135deg, var(--accent-purple), var(--accent-cyan))',
           width: '64px',
           height: '64px',
           borderRadius: '20px',
@@ -52,12 +52,12 @@ export default function LoginWall({ onLogin }) {
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'center',
-          boxShadow: '0 0 30px rgba(0, 229, 255, 0.4)'
+          boxShadow: '0 8px 24px rgba(79, 70, 229, 0.25)'
         }}>
-          <Dumbbell size={36} color="#000" strokeWidth={2.5} />
+          <Dumbbell size={36} color="#ffffff" strokeWidth={2.5} />
         </div>
 
-        <h2 style={{ fontSize: '1.8rem', fontWeight: 800, marginBottom: '8px' }}>
+        <h2 style={{ fontSize: '1.8rem', fontWeight: 800, marginBottom: '8px', color: 'var(--text-main)' }}>
           AI Real-time GYM Trainer
         </h2>
         <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem', marginBottom: '28px' }}>
@@ -77,15 +77,16 @@ export default function LoginWall({ onLogin }) {
               style={{
                 width: '100%',
                 padding: '14px 16px',
-                background: 'rgba(0, 0, 0, 0.3)',
+                background: '#f8fafc',
                 border: '1px solid var(--border-color)',
                 borderRadius: '12px',
-                color: '#fff',
+                color: 'var(--text-main)',
                 fontSize: '1rem',
+                fontWeight: 600,
                 outline: 'none',
                 transition: 'all 0.2s'
               }}
-              onFocus={(e) => e.target.style.borderColor = 'var(--accent-cyan)'}
+              onFocus={(e) => e.target.style.borderColor = 'var(--accent-purple)'}
               onBlur={(e) => e.target.style.borderColor = 'var(--border-color)'}
             />
           </div>
@@ -93,7 +94,8 @@ export default function LoginWall({ onLogin }) {
           {error && (
             <div style={{
               color: 'var(--accent-red)',
-              background: 'rgba(255, 23, 68, 0.1)',
+              background: '#fef2f2',
+              border: '1px solid #fecaca',
               padding: '10px 14px',
               borderRadius: '8px',
               fontSize: '0.85rem',
@@ -121,10 +123,11 @@ export default function LoginWall({ onLogin }) {
           justifyContent: 'center',
           gap: '20px',
           color: 'var(--text-dim)',
-          fontSize: '0.8rem'
+          fontSize: '0.8rem',
+          fontWeight: 500
         }}>
           <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
-            <Zap size={14} color="var(--accent-cyan)" /> Real-time Form AI
+            <Zap size={14} color="var(--accent-purple)" /> Real-time Form AI
           </span>
           <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
             <ShieldCheck size={14} color="var(--accent-green)" /> Private & Local SQLite
@@ -134,3 +137,4 @@ export default function LoginWall({ onLogin }) {
     </div>
   );
 }
+

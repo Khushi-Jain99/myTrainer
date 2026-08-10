@@ -23,9 +23,10 @@ export default function Sidebar({
           marginBottom: '16px',
           display: 'flex',
           alignItems: 'center',
-          gap: '8px'
+          gap: '8px',
+          color: 'var(--text-main)'
         }}>
-          <Target size={18} color="var(--accent-cyan)" /> Workout Plan
+          <Target size={18} color="var(--accent-purple)" /> Workout Plan
         </h3>
 
         {!workoutStarted ? (
@@ -40,16 +41,17 @@ export default function Sidebar({
                 style={{
                   width: '100%',
                   padding: '12px 14px',
-                  background: 'rgba(0, 0, 0, 0.4)',
+                  background: '#f8fafc',
                   border: '1px solid var(--border-color)',
                   borderRadius: '10px',
-                  color: '#fff',
+                  color: 'var(--text-main)',
                   fontSize: '0.95rem',
+                  fontWeight: 600,
                   outline: 'none'
                 }}
               >
                 {exerciseOptions.map((ex) => (
-                  <option key={ex} value={ex} style={{ background: '#121824' }}>
+                  <option key={ex} value={ex} style={{ background: '#ffffff', color: '#0f172a' }}>
                     {ex}
                   </option>
                 ))}
@@ -70,11 +72,12 @@ export default function Sidebar({
                   style={{
                     width: '100%',
                     padding: '12px',
-                    background: 'rgba(0, 0, 0, 0.4)',
+                    background: '#f8fafc',
                     border: '1px solid var(--border-color)',
                     borderRadius: '10px',
-                    color: '#fff',
+                    color: 'var(--text-main)',
                     fontSize: '0.95rem',
+                    fontWeight: 600,
                     outline: 'none'
                   }}
                 />
@@ -93,11 +96,12 @@ export default function Sidebar({
                   style={{
                     width: '100%',
                     padding: '12px',
-                    background: 'rgba(0, 0, 0, 0.4)',
+                    background: '#f8fafc',
                     border: '1px solid var(--border-color)',
                     borderRadius: '10px',
-                    color: '#fff',
+                    color: 'var(--text-main)',
                     fontSize: '0.95rem',
+                    fontWeight: 600,
                     outline: 'none'
                   }}
                 />
@@ -109,21 +113,21 @@ export default function Sidebar({
               className="btn-primary pulse-accent"
               style={{ width: '100%', marginTop: '8px' }}
             >
-              <Play size={18} fill="#000" /> Start Workout
+              <Play size={18} fill="#ffffff" /> Start Workout
             </button>
           </div>
         ) : (
           <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
             <div style={{
-              background: 'rgba(0, 229, 255, 0.08)',
-              border: '1px solid rgba(0, 229, 255, 0.2)',
+              background: 'rgba(79, 70, 229, 0.06)',
+              border: '1px solid rgba(79, 70, 229, 0.2)',
               padding: '14px',
               borderRadius: '12px'
             }}>
-              <div style={{ fontSize: '0.75rem', color: 'var(--accent-cyan)', fontWeight: 700, textTransform: 'uppercase' }}>
+              <div style={{ fontSize: '0.75rem', color: 'var(--accent-purple)', fontWeight: 700, textTransform: 'uppercase' }}>
                 Active Exercise
               </div>
-              <div style={{ fontSize: '1.1rem', fontWeight: 800, marginTop: '4px' }}>
+              <div style={{ fontSize: '1.1rem', fontWeight: 800, marginTop: '4px', color: 'var(--text-main)' }}>
                 {selectedExercise}
               </div>
               <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)', marginTop: '2px' }}>
@@ -136,7 +140,7 @@ export default function Sidebar({
               className="btn-danger"
               style={{ width: '100%' }}
             >
-              <Square size={18} fill="#fff" /> End Workout
+              <Square size={18} fill="#ffffff" /> End Workout
             </button>
           </div>
         )}
@@ -153,47 +157,50 @@ export default function Sidebar({
             alignItems: 'center',
             gap: '6px'
           }}>
-            <Activity size={16} color="var(--accent-cyan)" /> Live Progress Metrics
+            <Activity size={16} color="var(--accent-purple)" /> Live Progress Metrics
           </h4>
 
           <div style={{ display: 'grid', gridTemplateColumns: '1fr', gap: '12px' }}>
             <div style={{
-              background: 'rgba(0, 0, 0, 0.3)',
+              background: '#f8fafc',
+              border: '1px solid var(--border-color)',
               padding: '12px 14px',
               borderRadius: '10px',
               display: 'flex',
               justifyContent: 'space-between',
               alignItems: 'center'
             }}>
-              <span style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Total Reps</span>
-              <span style={{ fontSize: '1.2rem', fontWeight: 800, color: 'var(--accent-cyan)' }}>
+              <span style={{ fontSize: '0.85rem', color: 'var(--text-muted)', fontWeight: 500 }}>Total Reps</span>
+              <span style={{ fontSize: '1.2rem', fontWeight: 800, color: 'var(--accent-purple)' }}>
                 {metrics?.reps || 0}
               </span>
             </div>
 
             <div style={{
-              background: 'rgba(0, 0, 0, 0.3)',
+              background: '#f8fafc',
+              border: '1px solid var(--border-color)',
               padding: '12px 14px',
               borderRadius: '10px',
               display: 'flex',
               justifyContent: 'space-between',
               alignItems: 'center'
             }}>
-              <span style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Current Set Reps</span>
-              <span style={{ fontSize: '1.1rem', fontWeight: 700 }}>
+              <span style={{ fontSize: '0.85rem', color: 'var(--text-muted)', fontWeight: 500 }}>Current Set Reps</span>
+              <span style={{ fontSize: '1.1rem', fontWeight: 700, color: 'var(--text-main)' }}>
                 {metrics?.current_set_reps || 0} / {repsPerSet}
               </span>
             </div>
 
             <div style={{
-              background: 'rgba(0, 0, 0, 0.3)',
+              background: '#f8fafc',
+              border: '1px solid var(--border-color)',
               padding: '12px 14px',
               borderRadius: '10px',
               display: 'flex',
               justifyContent: 'space-between',
               alignItems: 'center'
             }}>
-              <span style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>Sets Completed</span>
+              <span style={{ fontSize: '0.85rem', color: 'var(--text-muted)', fontWeight: 500 }}>Sets Completed</span>
               <span style={{ fontSize: '1.1rem', fontWeight: 700, color: 'var(--accent-green)' }}>
                 {metrics?.sets_completed || 0} / {targetSets}
               </span>
@@ -266,16 +273,18 @@ function MetricRow({ label, value, isBadge }) {
       justifyContent: 'space-between',
       alignItems: 'center',
       padding: '8px 12px',
-      background: 'rgba(255, 255, 255, 0.03)',
+      background: '#f1f5f9',
+      border: '1px solid #e2e8f0',
       borderRadius: '8px',
       fontSize: '0.85rem'
     }}>
-      <span style={{ color: 'var(--text-muted)' }}>{label}</span>
+      <span style={{ color: 'var(--text-muted)', fontWeight: 500 }}>{label}</span>
       {isBadge ? (
         <span className={badgeClass}>{value}</span>
       ) : (
-        <span style={{ fontWeight: 600, fontFamily: 'var(--font-mono)' }}>{value}</span>
+        <span style={{ fontWeight: 600, fontFamily: 'var(--font-mono)', color: 'var(--text-main)' }}>{value}</span>
       )}
     </div>
   );
 }
+
