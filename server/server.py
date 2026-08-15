@@ -5,10 +5,13 @@ import base64
 import cv2
 import numpy as np
 import pandas as pd
+from dotenv import load_dotenv
 from fastapi import FastAPI, WebSocket, WebSocketDisconnect, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
 from typing import Optional
+
+load_dotenv()
 
 from groq import Groq
 from services.persistence.exercise_repository import (
