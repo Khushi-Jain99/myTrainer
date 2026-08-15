@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Camera, CameraOff, Video, Sliders } from 'lucide-react';
+import { WS_BASE_URL } from '../config';
 
 export default function CameraFeed({ workoutStarted, user, exercise, onMetricsUpdate, onVoiceFeedback }) {
   const videoRef = useRef(null);
@@ -17,7 +18,7 @@ export default function CameraFeed({ workoutStarted, user, exercise, onMetricsUp
 
     if (workoutStarted) {
       // 1. Connect WebSocket
-      const wsUrl = `ws://localhost:8000/ws/pose`;
+      const wsUrl = `${WS_BASE_URL}/ws/pose`;
       const ws = new WebSocket(wsUrl);
       wsRef.current = ws;
 

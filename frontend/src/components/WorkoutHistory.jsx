@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { History, Calendar, Clock, Award, RefreshCw } from 'lucide-react';
+import { API_BASE_URL } from '../config';
 
 export default function WorkoutHistory({ user, refreshTrigger }) {
   const [history, setHistory] = useState([]);
@@ -9,7 +10,7 @@ export default function WorkoutHistory({ user, refreshTrigger }) {
     if (!user?.id) return;
     setLoading(true);
     try {
-      const res = await fetch(`http://localhost:8000/api/user/history?user_id=${user.id}`);
+      const res = await fetch(`${API_BASE_URL}/api/user/history?user_id=${user.id}`);
       if (res.ok) {
         const data = await res.json();
         setHistory(data.aggregated || []);

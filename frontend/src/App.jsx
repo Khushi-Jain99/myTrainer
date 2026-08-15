@@ -5,6 +5,7 @@ import Sidebar from './components/Sidebar';
 import CameraFeed from './components/CameraFeed';
 import CoachBanner from './components/CoachBanner';
 import WorkoutHistory from './components/WorkoutHistory';
+import { API_BASE_URL } from './config';
 
 export default function App() {
   const [user, setUser] = useState(() => {
@@ -28,7 +29,7 @@ export default function App() {
   const [historyRefresh, setHistoryRefresh] = useState(0);
 
   useEffect(() => {
-    fetch('http://localhost:8000/api/config')
+    fetch(`${API_BASE_URL}/api/config`)
       .then((res) => res.json())
       .then((data) => {
         if (data.exercise_options) {
@@ -54,7 +55,7 @@ export default function App() {
     setMetrics({});
     setCoachFeedback(null);
     try {
-      const res = await fetch('http://localhost:8000/api/workout/start', {
+      const res = await fetch(`${API_BASE_URL}/api/workout/start`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -81,7 +82,7 @@ export default function App() {
   const handleEndWorkout = async () => {
     setWorkoutStarted(false);
     try {
-      const res = await fetch('http://localhost:8000/api/workout/end', {
+      const res = await fetch(`${API_BASE_URL}/api/workout/end`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
