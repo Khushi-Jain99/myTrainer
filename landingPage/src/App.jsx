@@ -131,7 +131,7 @@ export default function App() {
             <a href="#demo" className="nav-link">Live AI Demo</a>
           </div>
 
-          <a href="http://localhost:5173" className="btn-primary">
+          <a href="https://mygymtrainer.vercel.app/" className="btn-primary">
             Launch App <ArrowRight size={16} />
           </a>
         </nav>
@@ -149,7 +149,7 @@ export default function App() {
           </p>
 
           <div className="hero-actions">
-            <a href="http://localhost:5173" className="btn-primary" style={{ padding: '16px 32px', fontSize: '1.05rem', borderRadius: '14px' }}>
+            <a href="https://mygymtrainer.vercel.app/" className="btn-primary" style={{ padding: '16px 32px', fontSize: '1.05rem', borderRadius: '14px' }}>
               <Play size={20} fill="#ffffff" /> Start Workout Now
             </a>
             <a href="#demo" className="btn-secondary">
@@ -421,7 +421,7 @@ export default function App() {
             color: 'var(--text-muted)'
           }}>
             <span>MyTrainer (AI Gym Coach) — Real-Time Pose Detection & Voice AI Coaching</span>
-            <a href="http://localhost:5173" style={{ color: 'var(--accent-purple)', fontWeight: 600, textDecoration: 'none' }}>
+            <a href="https://mygymtrainer.vercel.app/" style={{ color: 'var(--accent-purple)', fontWeight: 600, textDecoration: 'none' }}>
               Launch Trainer App →
             </a>
           </div>
