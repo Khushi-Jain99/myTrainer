@@ -122,14 +122,13 @@ export default function App() {
                 boxShadow: '0 4px 12px rgba(79, 70, 229, 0.3)'
               }}
             />
-            <span>myTrainer AI</span>
+            <span>MyTrainer - AI Gym Coach</span>
           </a>
 
           <div className="nav-links">
             <a href="#features" className="nav-link">Features</a>
             <a href="#exercises" className="nav-link">Exercises</a>
             <a href="#demo" className="nav-link">Live AI Demo</a>
-            <a href="#contact" className="nav-link">Creator</a>
           </div>
 
           <a href="http://localhost:5173" className="btn-primary">
@@ -139,10 +138,6 @@ export default function App() {
 
         {/* Hero Section */}
         <section className="hero">
-          <div className="badge">
-            <div className="badge-dot" />
-            <span>AI-POWERED · REAL-TIME · GYM COACH</span>
-          </div>
 
           <h1 className="hero-title">
             Elevate Your Form.<br />
@@ -158,7 +153,7 @@ export default function App() {
               <Play size={20} fill="#ffffff" /> Start Workout Now
             </a>
             <a href="#demo" className="btn-secondary">
-              <Eye size={18} color="var(--accent-purple)" /> Watch Live Simulation
+              <Eye size={18} color="var(--accent-purple)" /> Watch AI Live Simulation
             </a>
           </div>
 
@@ -358,35 +353,77 @@ export default function App() {
           </div>
         </section>
 
-        {/* Creator & Footer Section */}
-        <footer className="footer" id="contact">
-          <div style={{ maxWidth: '600px', margin: '0 auto 24px' }}>
-            <span className="section-tag">// LET'S CONNECT</span>
-            <h3 style={{ fontSize: '1.8rem', fontWeight: 800, color: '#0f172a', margin: '8px 0' }}>
-              Built by a Human. Backed by Data.
-            </h3>
-            <p style={{ color: 'var(--text-muted)', fontSize: '0.95rem' }}>
-              Open to opportunities in ML engineering, computer vision, and full-stack AI products.
-            </p>
+        {/* Modern Product Footer */}
+        <footer className="footer" style={{
+          marginTop: '60px',
+          paddingTop: '40px',
+          borderTop: '1px solid var(--border-color)',
+          textAlign: 'left'
+        }}>
+          <div style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
+            gap: '32px',
+            marginBottom: '40px'
+          }}>
+            {/* Brand Column */}
+            <div>
+              <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '12px' }}>
+                <img
+                  src="/logo.svg"
+                  alt="myTrainer Logo"
+                  style={{ width: '32px', height: '32px', objectFit: 'contain' }}
+                />
+                <span style={{ fontSize: '1.2rem', fontWeight: 800, color: 'var(--text-main)' }}>
+                  MyTrainer - AI Gym Coach
+                </span>
+              </div>
+              <p style={{ color: 'var(--text-muted)', fontSize: '0.88rem', lineHeight: '1.6' }}>
+                Next-gen fitness assistant offering real-time joint tracking, automated rep counting, and instant voice feedback.
+              </p>
+            </div>
+
+            {/* Quick Links */}
+            <div>
+              <h4 style={{ fontSize: '0.95rem', fontWeight: 700, color: 'var(--text-main)', marginBottom: '14px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                Quick Links
+              </h4>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', fontSize: '0.9rem' }}>
+                <a href="#features" className="nav-link" style={{ width: 'fit-content' }}>Features</a>
+                <a href="#exercises" className="nav-link" style={{ width: 'fit-content' }}>Supported Exercises</a>
+                <a href="#demo" className="nav-link" style={{ width: 'fit-content' }}>Live AI Demo</a>
+              </div>
+            </div>
+
+            {/* Tech Stack */}
+            <div>
+              <h4 style={{ fontSize: '0.95rem', fontWeight: 700, color: 'var(--text-main)', marginBottom: '14px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>
+                Powered By
+              </h4>
+              <div style={{ display: 'flex', flexWrap: 'wrap', gap: '8px' }}>
+                <span style={{ padding: '4px 10px', background: '#f1f5f9', borderRadius: '6px', fontSize: '0.8rem', fontWeight: 600, color: 'var(--accent-purple)' }}>MediaPipe Pose</span>
+                <span style={{ padding: '4px 10px', background: '#f1f5f9', borderRadius: '6px', fontSize: '0.8rem', fontWeight: 600, color: 'var(--accent-purple)' }}>FastAPI & WebSockets</span>
+                <span style={{ padding: '4px 10px', background: '#f1f5f9', borderRadius: '6px', fontSize: '0.8rem', fontWeight: 600, color: 'var(--accent-purple)' }}>Groq Voice AI</span>
+                <span style={{ padding: '4px 10px', background: '#f1f5f9', borderRadius: '6px', fontSize: '0.8rem', fontWeight: 600, color: 'var(--accent-purple)' }}>React + Vite</span>
+              </div>
+            </div>
           </div>
 
-          <div className="social-row">
-            <a href="https://www.linkedin.com/in/prince-khunt-linked-in/" target="_blank" rel="noopener noreferrer" className="social-btn">
-              LinkedIn
+          <div style={{
+            borderTop: '1px solid var(--border-color)',
+            paddingTop: '20px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            flexWrap: 'wrap',
+            gap: '16px',
+            fontSize: '0.85rem',
+            color: 'var(--text-muted)'
+          }}>
+            <span>MyTrainer (AI Gym Coach) — Real-Time Pose Detection & Voice AI Coaching</span>
+            <a href="http://localhost:5173" style={{ color: 'var(--accent-purple)', fontWeight: 600, textDecoration: 'none' }}>
+              Launch Trainer App →
             </a>
-            <a href="https://github.com/PrinceKhunt16" target="_blank" rel="noopener noreferrer" className="social-btn">
-              GitHub
-            </a>
-            <a href="https://twitter.com/prince_khunt_" target="_blank" rel="noopener noreferrer" className="social-btn">
-              Twitter / X
-            </a>
-            <a href="mailto:princekhunt04@gmail.com" className="social-btn">
-              Email
-            </a>
-          </div>
-
-          <div style={{ fontSize: '0.85rem', color: 'var(--text-muted)' }}>
-            © 2026 myTrainer AI — Real-Time Pose Detection & AI Gym Coaching
           </div>
         </footer>
       </div>
