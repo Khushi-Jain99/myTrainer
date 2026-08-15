@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <!-- Premium Gradients -->
+    <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0F172A" />
+      <stop offset="50%" stop-color="#1E1B4B" />
+      <stop offset="100%" stop-color="#311B92" />
+    </linearGradient>
+
+    <linearGradient id="neonArc" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00F2FE" />
+      <stop offset="50%" stop-color="#4FACFE" />
+      <stop offset="100%" stop-color="#7F00FF" />
+    </linearGradient>
+
+    <linearGradient id="bodyGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="100%" stop-color="#E2E8F0" />
+    </linearGradient>
+
+    <linearGradient id="pulseGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00F2FE" />
+      <stop offset="100%" stop-color="#FF007F" />
+    </linearGradient>
+
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="10" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#4FACFE" flood-opacity="0.3" />
+    </filter>
+  </defs>
+
+  <!-- Hexagonal Shield Emblem Background -->
+  <path d="M 256 36 L 436 120 L 436 348 L 256 476 L 76 348 L 76 120 Z" 
+        fill="url(#shieldGrad)" 
+        stroke="url(#neonArc)" 
+        stroke-width="8" 
+        filter="url(#softShadow)" />
+
+  <!-- Computer Vision Pose Grid Background Lines -->
+  <circle cx="256" cy="240" r="140" fill="none" stroke="url(#neonArc)" stroke-width="2" stroke-dasharray="8 6" opacity="0.35" />
+  <circle cx="256" cy="240" r="90" fill="none" stroke="#00F2FE" stroke-width="1.5" stroke-dasharray="4 4" opacity="0.25" />
+
+  <!-- Pose Detection Joint Skeleton & Athlete Figure -->
+  <!-- Head (AI Core Ring) -->
+  <circle cx="256" cy="145" r="26" fill="none" stroke="url(#neonArc)" stroke-width="6" />
+  <circle cx="256" cy="145" r="12" fill="#00F2FE" filter="url(#glow)" />
+
+  <!-- Skeleton Joints / Nodes -->
+  <!-- Shoulders -->
+  <line x1="185" y1="210" x2="327" y2="210" stroke="url(#bodyGrad)" stroke-width="10" stroke-linecap="round" />
+  <!-- Spine to Hip -->
+  <line x1="256" y1="210" x2="256" y2="310" stroke="url(#bodyGrad)" stroke-width="10" stroke-linecap="round" />
+  <!-- Arms Flexing Up (Power Stance) -->
+  <path d="M 185 210 L 140 170 L 165 115" fill="none" stroke="url(#neonArc)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M 327 210 L 372 170 L 347 115" fill="none" stroke="url(#neonArc)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" />
+  <!-- Legs Deep Squat / Power Base -->
+  <path d="M 256 310 L 195 365 L 160 415" fill="none" stroke="url(#bodyGrad)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" />
+  <path d="M 256 310 L 317 365 L 352 415" fill="none" stroke="url(#bodyGrad)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" />
+
+  <!-- Glowing Joint Nodes (Computer Vision Keypoints) -->
+  <circle cx="185" cy="210" r="9" fill="#00F2FE" filter="url(#glow)" />
+  <circle cx="327" cy="210" r="9" fill="#00F2FE" filter="url(#glow)" />
+  <circle cx="140" cy="170" r="8" fill="#4FACFE" />
+  <circle cx="372" cy="170" r="8" fill="#4FACFE" />
+  <circle cx="165" cy="115" r="9" fill="#FF007F" filter="url(#glow)" />
+  <circle cx="347" cy="115" r="9" fill="#FF007F" filter="url(#glow)" />
+  <circle cx="256" cy="310" r="9" fill="#00F2FE" filter="url(#glow)" />
+  <circle cx="195" cy="365" r="8" fill="#4FACFE" />
+  <circle cx="317" cy="365" r="8" fill="#4FACFE" />
+  <circle cx="160" cy="415" r="9" fill="#00F2FE" />
+  <circle cx="352" cy="415" r="9" fill="#00F2FE" />
+
+  <!-- AI Pulse Beam Across Chest -->
+  <path d="M 170 255 L 210 255 L 225 235 L 245 280 L 265 220 L 280 255 L 342 255" 
+        fill="none" 
+        stroke="url(#pulseGrad)" 
+        stroke-width="5" 
+        stroke-linecap="round" 
+        stroke-linejoin="round" 
+        filter="url(#glow)" />
+</svg>

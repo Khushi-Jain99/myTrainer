@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Dumbbell, ArrowRight, Zap, ShieldCheck } from 'lucide-react';
+import { ArrowRight, Zap, ShieldCheck } from 'lucide-react';
 
 export default function LoginWall({ onLogin }) {
   const [username, setUsername] = useState('');
@@ -43,19 +43,19 @@ export default function LoginWall({ onLogin }) {
         padding: '40px 32px',
         textAlign: 'center'
       }}>
-        <div style={{
-          background: 'linear-gradient(135deg, var(--accent-purple), var(--accent-cyan))',
-          width: '64px',
-          height: '64px',
-          borderRadius: '20px',
-          margin: '0 auto 20px',
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          boxShadow: '0 8px 24px rgba(79, 70, 229, 0.25)'
-        }}>
-          <Dumbbell size={36} color="#ffffff" strokeWidth={2.5} />
-        </div>
+        <img
+          src="/logo.svg"
+          alt="myTrainer Logo"
+          style={{
+            width: '64px',
+            height: '64px',
+            borderRadius: '20px',
+            margin: '0 auto 20px',
+            display: 'block',
+            objectFit: 'contain',
+            boxShadow: '0 8px 24px rgba(79, 70, 229, 0.25)'
+          }}
+        />
 
         <h2 style={{ fontSize: '1.8rem', fontWeight: 800, marginBottom: '8px', color: 'var(--text-main)' }}>
           AI Real-time GYM Trainer
@@ -114,25 +114,6 @@ export default function LoginWall({ onLogin }) {
             {loading ? 'Starting Session...' : 'Start Session'} <ArrowRight size={18} />
           </button>
         </form>
-
-        <div style={{
-          marginTop: '28px',
-          paddingTop: '20px',
-          borderTop: '1px solid var(--border-color)',
-          display: 'flex',
-          justifyContent: 'center',
-          gap: '20px',
-          color: 'var(--text-dim)',
-          fontSize: '0.8rem',
-          fontWeight: 500
-        }}>
-          <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
-            <Zap size={14} color="var(--accent-purple)" /> Real-time Form AI
-          </span>
-          <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}>
-            <ShieldCheck size={14} color="var(--accent-green)" /> Private & Local SQLite
-          </span>
-        </div>
       </div>
     </div>
   );

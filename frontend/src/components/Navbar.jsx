@@ -1,23 +1,22 @@
 import React from 'react';
-import { Dumbbell, User, LogOut, Activity } from 'lucide-react';
+import { User, LogOut, Activity } from 'lucide-react';
 
 export default function Navbar({ user, onLogout }) {
   return (
     <header className="glass-card" style={{ padding: '16px 24px', marginBottom: '24px', borderRadius: '16px' }}>
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '14px' }}>
-          <div style={{
-            background: 'linear-gradient(135deg, var(--accent-purple), var(--accent-cyan))',
-            width: '42px',
-            height: '42px',
-            borderRadius: '12px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            boxShadow: '0 4px 14px rgba(79, 70, 229, 0.25)'
-          }}>
-            <Dumbbell size={24} color="#ffffff" strokeWidth={2.5} />
-          </div>
+          <img
+            src="/logo.svg"
+            alt="myTrainer Logo"
+            style={{
+              width: '44px',
+              height: '44px',
+              borderRadius: '12px',
+              objectFit: 'contain',
+              boxShadow: '0 4px 14px rgba(79, 70, 229, 0.3)'
+            }}
+          />
           <div>
             <h1 style={{ fontSize: '1.4rem', fontWeight: 800, letterSpacing: '-0.5px', background: 'linear-gradient(90deg, #0f172a, #4338ca)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
               My Trainer

@@ -111,9 +111,17 @@ export default function App() {
         {/* Navbar */}
         <nav className="nav glass-card">
           <a href="#" className="logo">
-            <div className="logo-icon">
-              <Dumbbell size={22} color="#ffffff" strokeWidth={2.5} />
-            </div>
+            <img
+              src="/logo.svg"
+              alt="myTrainer Logo"
+              style={{
+                width: '38px',
+                height: '38px',
+                borderRadius: '10px',
+                objectFit: 'contain',
+                boxShadow: '0 4px 12px rgba(79, 70, 229, 0.3)'
+              }}
+            />
             <span>myTrainer AI</span>
           </a>
 
